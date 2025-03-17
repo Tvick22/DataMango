@@ -3,11 +3,6 @@ layout: base
 search_exclude: true
 menu: nav/home.html
 ---
-<<<<<<< HEAD
-*** Arsajua bhatrusarya ****
-*** nonal yu ***
-*** brandon mfuslo ***
-=======
 
 
 <style>
@@ -24,4 +19,3 @@ In digital design and web development, colors, images, and data encoding play a 
 
 ## Color Codes
 Color representation in computing is done using various formats, including:
->>>>>>> b2620d7 (commit color codes)
