@@ -4,4 +4,4 @@ search_exclude: true
 menu: nav/home.html
 ---
 
-CROWDSOURCING is cool
+CROWDSOURCING isnt cool
