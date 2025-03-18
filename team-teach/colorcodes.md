@@ -23,3 +23,4 @@ In digital design and web development, colors, images, and data encoding play a 
 ## Color Codes
 Color representation in computing is done using various formats, including:
 
+
