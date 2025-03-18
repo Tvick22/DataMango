@@ -5,7 +5,6 @@ menu: nav/home.html
 ---
 
 
-<<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=dev(ice-width, initial-scale=1.0">
@@ -95,15 +94,10 @@ menu: nav/home.html
     </div>
     <div class="slide hidden" id="slide2">
         <img src="{{site.baseurl}}/images/mango+against+white+copy.png" alt="Cantella Image" class="mango">
-        <h1>What is AI?</h1>
-        <p>Just like a mango ripens with time, AI improves with learning!</p>
     </div>
     <div class="slide hidden" id="slide3">
         <img src="{{site.baseurl}}/images/mango+against+white+copy.png" alt="Cantella Image" class="mango">
-        <h1>Cybersecurity</h1>
-        <p>Protect your data like a mango's peel protects its juicy core!</p>
     </div>
-    
     <div class="controls">
         <button class="btn" onclick="prevSlide()">◀ Prev</button>
         <button class="btn" onclick="nextSlide()">Next ▶</button>
@@ -148,4 +142,4 @@ menu: nav/home.html
         }
     </script>
 </body>
-</html>
+
