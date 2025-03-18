@@ -4,10 +4,9 @@ search_exclude: true
 menu: nav/home.html
 ---
 
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=dev(ice-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataMango Presentation</title>
     <style>
         body {
@@ -36,109 +35,61 @@ menu: nav/home.html
             transform: translate(-50%, -50%);
             width: 300px;
             max-width: 300px;
-            animation: floatMango 3s infinite ease-in-out alternate;
-        }
-        @keyframes floatMango {
-            from { transform: translate(-50%, -50%) translateY(0px) rotate(0deg); }
-            to { transform: translate(-50%, -50%) translateY(20px) rotate(5deg); }
+            cursor: pointer;
         }
         .hidden {
-            transform: translateX(-100%);
+            display: none;
+        }
+        .voxel {
+            width: 100px;
+            height: 100px;
+            position: absolute;
             opacity: 0;
-        }
-        .visible {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        .controls {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .btn {
-            background: white;
-            color: #ff8800;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1.2rem;
             cursor: pointer;
-            border-radius: 50px;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: #ff6600;
-            color: white;
-        }
-        .quotes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-        .quote {
-            position: absolute;
-            color: white;
-            font-size: 1.2rem;
-            font-style: italic;
-            width: 200px;
-            text-align: center;
+            transition: transform 0.5s ease-out, opacity 0.5s;
+            background: linear-gradient(45deg, #ffb347, #d98c00);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
     <div class="slide visible" id="slide1">
-        <img src="{{site.baseurl}}/images/mango+against+white+copy.png" alt="Cantella Image" class="mango">
+        <img src="{{site.baseurl}}/images/mango+against+white+copy.png" alt="Mango" class="mango" id="mango">
+        <div id="voxels-container"></div>
     </div>
-    <div class="slide hidden" id="slide2">
-        <img src="{{site.baseurl}}/images/mango+against+white+copy.png" alt="Cantella Image" class="mango">
-    </div>
-    <div class="slide hidden" id="slide3">
-        <img src="{{site.baseurl}}/images/mango+against+white+copy.png" alt="Cantella Image" class="mango">
-    </div>
-    <div class="controls">
-        <button class="btn" onclick="prevSlide()">◀ Prev</button>
-        <button class="btn" onclick="nextSlide()">Next ▶</button>
-    </div>
-
-    <div class="quotes">
-        <div class="quote" style="top: 10%; left: 20%;">"The best way to predict the future is to invent it." - Alan Kay</div>
-        <div class="quote" style="top: 70%; left: 15%;">"Simplicity is the soul of efficiency." - Austin Freeman</div>
-        <div class="quote" style="top: 30%; right: 10%;">"Code is like humor. When you have to explain it, it’s bad." - Cory House</div>
-        <div class="quote" style="top: 80%; right: 20%;">"Programs must be written for people to read, and only incidentally for machines to execute." - Harold Abelson</div>
-    </div>
-
+    
     <script>
-        let currentSlide = 1;
-        const totalSlides = 3;
+        document.getElementById("mango").addEventListener("click", function() {
+            let mango = document.getElementById("mango");
+            mango.classList.add("hidden");
+            createVoxels();
+        });
 
-        function showSlide(slideNumber) {
-            for (let i = 1; i <= totalSlides; i++) {
-                const slide = document.getElementById(`slide${i}`);
-                if (i === slideNumber) {
-                    slide.classList.add("visible");
-                    slide.classList.remove("hidden");
-                } else {
-                    slide.classList.add("hidden");
-                    slide.classList.remove("visible");
-                }
-            }
-        }
-
-        function nextSlide() {
-            if (currentSlide < totalSlides) {
-                currentSlide++;
-                showSlide(currentSlide);
-            }
-        }
-
-        function prevSlide() {
-            if (currentSlide > 1) {
-                currentSlide--;
-                showSlide(currentSlide);
-            }
+        function createVoxels() {
+            const container = document.getElementById("voxels-container");
+            const positions = [
+                { top: "40%", left: "40%", url: "https://example.com/page1" },
+                { top: "50%", left: "50%", url: "https://example.com/page2" },
+                { top: "60%", left: "60%", url: "https://example.com/page3" }
+            ];
+            
+            positions.forEach((pos, index) => {
+                let voxel = document.createElement("div");
+                voxel.classList.add("voxel");
+                voxel.style.top = pos.top;
+                voxel.style.left = pos.left;
+                
+                setTimeout(() => {
+                    voxel.style.opacity = "1";
+                    voxel.style.transform = `translate(${index * 50 - 50}px, ${index * 50 - 50}px) rotate(${Math.random() * 20 - 10}deg)`;
+                }, 100);
+                
+                voxel.addEventListener("click", function() {
+                    window.open(pos.url, "_blank");
+                });
+                
+                container.appendChild(voxel);
+            });
         }
     </script>
 </body>
