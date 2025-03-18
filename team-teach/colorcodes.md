@@ -3,9 +3,9 @@ layout: base
 search_exclude: true
 menu: nav/home.html
 ---
-*** Arsajua bhatrusarya ****
-*** nolan yu ***
-*** brandon mfuslo ***
+
+
+=======
 
 
 <style>
