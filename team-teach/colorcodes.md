@@ -4,6 +4,7 @@ search_exclude: true
 menu: nav/home.html
 ---
 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +13,15 @@ menu: nav/home.html
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(45deg, #ffb347, #ffcc33);
+            background-size: 300% 300%;
+            animation: gradientBG 8s infinite;
             margin: 0;
             overflow: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .slide {
             width: 100vw;
@@ -22,38 +30,64 @@ menu: nav/home.html
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
             position: absolute;
             transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        }
+        .title {
+            font-size: 3.5rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            animation: fadeInScale 3s ease-in-out;
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: translateX(-50%) scale(0.9); }
+            100% { opacity: 1; transform: translateX(-50%) scale(1); }
         }
         .mango {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 300px;
-            max-width: 300px;
+            width: 450px;
+            max-width: 450px;
             cursor: pointer;
         }
         .hidden {
             display: none;
         }
         .voxel {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             position: absolute;
             opacity: 0;
             cursor: pointer;
-            transition: transform 0.5s ease-out, opacity 0.5s;
+            transition: transform 0.5s ease-out, opacity 0.5s, box-shadow 0.5s;
             background: linear-gradient(45deg, #ffb347, #d98c00);
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.3rem;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .voxel:hover {
+            transform: scale(1.1);
+            box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
     <div class="slide visible" id="slide1">
+        <div class="title" id="title">Color-codes, Images, Base64</div>
         <img src="{{site.baseurl}}/images/mango+against+white+copy.png" alt="Mango" class="mango" id="mango">
         <div id="voxels-container"></div>
     </div>
@@ -61,16 +95,18 @@ menu: nav/home.html
     <script>
         document.getElementById("mango").addEventListener("click", function() {
             let mango = document.getElementById("mango");
+            let title = document.getElementById("title");
             mango.classList.add("hidden");
+            title.classList.add("hidden");
             createVoxels();
         });
 
         function createVoxels() {
             const container = document.getElementById("voxels-container");
             const positions = [
-                { top: "40%", left: "40%", url: "https://example.com/page1" },
-                { top: "50%", left: "50%", url: "https://example.com/page2" },
-                { top: "60%", left: "60%", url: "https://example.com/page3" }
+                { top: "35%", left: "30%", label: "Images", font: "'Georgia', serif" },
+                { top: "45%", left: "45%", label: "Base64", font: "'Comic Sans MS', cursive" },
+                { top: "55%", left: "60%", label: "Color Codes", font: "'Times New Roman', Times, serif" }
             ];
             
             positions.forEach((pos, index) => {
@@ -78,6 +114,8 @@ menu: nav/home.html
                 voxel.classList.add("voxel");
                 voxel.style.top = pos.top;
                 voxel.style.left = pos.left;
+                voxel.style.fontFamily = pos.font; // Apply unique font
+                voxel.innerText = pos.label;
                 
                 setTimeout(() => {
                     voxel.style.opacity = "1";
@@ -85,7 +123,7 @@ menu: nav/home.html
                 }, 100);
                 
                 voxel.addEventListener("click", function() {
-                    window.open(pos.url, "_blank");
+                    // Do nothing for now
                 });
                 
                 container.appendChild(voxel);
@@ -93,3 +131,4 @@ menu: nav/home.html
         }
     </script>
 </body>
+</html>
