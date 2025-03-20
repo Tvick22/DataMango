@@ -3,6 +3,8 @@ let scene,
   renderer,
   mango,
   controls,
+  heating,
+  boom,
   explosionPieces = [];
 let mangoLoaded = false;
 
@@ -10,6 +12,7 @@ function init() {
   // Create Scene
   scene = new THREE.Scene();
   scene.background = new THREE.Color("#183327");
+  scene.fog = new THREE.Fog("#3f7b9d", 10, 15);
 
   // Renderer
   renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -50,15 +53,107 @@ function init() {
   directionalLight.castShadow = true;
   scene.add(directionalLight);
 
+  function createParticleExplosion(x, y, z) {
+    const particleCount = 100; // Number of particles
+    const particlesGeometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const velocities = new Float32Array(particleCount * 3);
+
+    for (let i = 0; i < particleCount; i++) {
+      // Set initial positions at the mango's position
+      positions[i * 3] = x;
+      positions[i * 3 + 1] = y;
+      positions[i * 3 + 2] = z;
+
+      // Assign random velocities for explosion effect
+      velocities[i * 3] = (Math.random() - 0.5) * 2; // X-axis
+      velocities[i * 3 + 1] = (Math.random() - 0.5) * 2; // Y-axis
+      velocities[i * 3 + 2] = (Math.random() - 0.5) * 2; // Z-axis
+    }
+
+    particlesGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(positions, 3),
+    );
+    particlesGeometry.setAttribute(
+      "velocity",
+      new THREE.BufferAttribute(velocities, 3),
+    );
+
+    const particlesMaterial = new THREE.PointsMaterial({
+      color: 0xff9900, // Mango-like color
+      size: 0.1,
+      transparent: false,
+      opacity: 1,
+    });
+
+    const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particles);
+
+    // Animate particles
+    let life = 100; // Lifetime of particles
+    function animateParticles() {
+      if (life <= 0) {
+        scene.remove(particles);
+        return;
+      }
+
+      const positions = particles.geometry.attributes.position.array;
+      const velocities = particles.geometry.attributes.velocity.array;
+
+      for (let i = 0; i < particleCount; i++) {
+        positions[i * 3] += velocities[i * 3] * 0.1; // Move X
+        positions[i * 3 + 1] += velocities[i * 3 + 1] * 0.1; // Move Y
+        positions[i * 3 + 2] += velocities[i * 3 + 2] * 0.1; // Move Z
+
+        velocities[i * 3 + 1] -= 0.01; // Apply gravity
+      }
+
+      particles.geometry.attributes.position.needsUpdate = true;
+      life--;
+      requestAnimationFrame(animateParticles);
+    }
+
+    animateParticles();
+  }
+
   // Load Mango Model
   const loader = new THREE.GLTFLoader();
   loader.load("mango/scene.gltf", (gltf) => {
     mango = gltf.scene;
+    mango.Name = "mango";
     mango.scale.set(1.5, 1.5, 1.5); // Adjust size
     mango.position.set(0, -1.5, 0); // Center mango
     scene.add(mango);
     function animate(interval) {
+      if (boom) {
+        createParticleExplosion(0, 0, 0);
+        setTimeout(() => {
+          window.location.replace("/DataMango/team-teach/crowdsourcingLesson");
+        }, 1000);
+        scene.remove(mango);
+      }
+      if (heating) {
+        mango.traverse((child) => {
+          if (child.isMesh && child.material) {
+            if (!child.material.emissive) {
+              child.material.emissive = new THREE.Color("#ff9900"); // Set emissive color
+            }
+            child.material.emissiveIntensity = Math.min(
+              (child.material.emissiveIntensity || 0) + 1,
+              100,
+            );
+            if (child.material.emissiveIntensity >= 100) {
+              console.log("hi");
+              heating = false;
+              boom = true;
+            }
+          }
+        });
+      }
+
       mango.rotation.y += 0.01;
+
       const amplitude = 0.1;
       const newYPosition =
         amplitude * Math.sin((Math.PI / 100) * interval) - 1.5;
@@ -70,14 +165,36 @@ function init() {
       animate(interval);
       controls.update();
       interval++;
-      // if (interval >= 100) {
-      //   interval = 0;
-      // }
     });
     mangoLoaded = true;
   });
 }
 
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+window.addEventListener("click", onMouseClick, false);
+function onMouseClick(event) {
+  // Calculate normalized mouse coordinates
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+  // Update the raycaster with the mouse position
+  raycaster.setFromCamera(mouse, camera);
+
+  // Get intersecting objects
+  const intersects = raycaster.intersectObjects(scene.children, true); // true for recursive check
+
+  // Check if any objects were intersected
+  if (intersects.length > 0) {
+    const clickedObject = intersects[0].object;
+    // Perform default actions for other objects
+    if ((clickedObject.Name = "mango")) {
+      clickedObject.material.color.set("#FFC300"); // Set the base color
+      clickedObject.material.emissive.set("#FFC300"); // Add glow effect
+      heating = !heating;
+    }
+  }
+}
 window.addEventListener("resize", () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
   camera.aspect = window.innerWidth / window.innerHeight;
