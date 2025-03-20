@@ -104,9 +104,9 @@ menu: nav/home.html
         function createVoxels() {
             const container = document.getElementById("voxels-container");
             const positions = [
-                { top: "35%", left: "30%", label: "Images", font: "'Georgia', serif" },
-                { top: "45%", left: "45%", label: "Base64", font: "'Comic Sans MS', cursive" },
-                { top: "55%", left: "60%", label: "Color Codes", font: "'Times New Roman', Times, serif" }
+                { top: "35%", left: "30%", label: "Images", font: "'Georgia', serif", link: "_notebooks/2025-3-18-ImagesTeachingPlan.ipynb" },
+                { top: "45%", left: "45%", label: "Base64", font: "'Comic Sans MS', cursive", link: "_notebooks/2025-3-18-Base64TeachingPlan.ipynb" },
+                { top: "55%", left: "60%", label: "Color Codes", font: "'Times New Roman', Times, serif", link: "_notebooks/2025-3-18-ColorCodesTeachingPlan.ipynb" }
             ];
             
             positions.forEach((pos, index) => {
@@ -116,15 +116,15 @@ menu: nav/home.html
                 voxel.style.left = pos.left;
                 voxel.style.fontFamily = pos.font; // Apply unique font
                 voxel.innerText = pos.label;
+
+                voxel.addEventListener("click", function() {
+                    window.location.href = pos.link; // Navigate to the Jupyter Notebook
+                });
                 
                 setTimeout(() => {
                     voxel.style.opacity = "1";
                     voxel.style.transform = `translate(${index * 50 - 50}px, ${index * 50 - 50}px) rotate(${Math.random() * 20 - 10}deg)`;
                 }, 100);
-                
-                voxel.addEventListener("click", function() {
-                    // Do nothing for now
-                });
                 
                 container.appendChild(voxel);
             });
