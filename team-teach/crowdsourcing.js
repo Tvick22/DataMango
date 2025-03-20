@@ -8,6 +8,41 @@ let scene,
   explosionPieces = [];
 let mangoLoaded = false;
 
+function riseMangoLevel() {
+  const body = document.body;
+  body.style.margin = "0";
+  body.style.height = "100vh";
+  body.style.overflow = "hidden";
+  body.style.position = "relative";
+
+  const orangeDiv = document.createElement("div");
+  orangeDiv.style.position = "absolute";
+  orangeDiv.style.bottom = "0";
+  orangeDiv.style.left = "0";
+  orangeDiv.style.width = "100%";
+  orangeDiv.style.height = "0";
+  orangeDiv.style.backgroundColor = "orange";
+
+  body.appendChild(orangeDiv);
+
+  let height = 0;
+
+  function fillUp() {
+    height += 0.25;
+    orangeDiv.style.height = `${height}%`;
+    if (height < 100) {
+      requestAnimationFrame(fillUp);
+    }
+    if (height >= 100) {
+      setTimeout(() => {
+        window.location.replace("/DataMango/team-teach/crowdsourcingLesson");
+      }, 1000);
+    }
+  }
+
+  fillUp();
+}
+
 function init() {
   // Create Scene
   scene = new THREE.Scene();
@@ -128,9 +163,7 @@ function init() {
     function animate(interval) {
       if (boom) {
         createParticleExplosion(0, 0, 0);
-        setTimeout(() => {
-          window.location.replace("/DataMango/team-teach/crowdsourcingLesson");
-        }, 1000);
+        riseMangoLevel();
         scene.remove(mango);
       }
       if (heating) {
