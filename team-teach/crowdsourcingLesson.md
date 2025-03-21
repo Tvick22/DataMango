@@ -4,87 +4,189 @@ search_exclude: true
 menu: nav/home.html
 ---
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowdsourcing in Computing</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+        h2 {
+            border-left: 5px solid #ffdd57;
+            padding-left: 10px;
+            color: #2c3e50;
+        }
+        .highlight {
+            background-color: #ffdd57;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .flex-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .box {
+            flex: 1;
+            min-width: 280px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .box img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .mcq, .popcorn, .homework, .video-section {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .reveal-answer {
+            display: none;
+            background: #2ecc71;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .reveal-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background: #2c3e50;
+            color: white;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
 
-<body class="bg-[#E56717]">
-    <div class="max-w-3xl mx-auto">
-        <h1 id="crowdsourcing" class="text-4xl font-bold text-center text-blue-600 mb-6">Crowdsourcing</h1>
+<div class="container">
+    <h1>📢 Crowdsourcing in Computing</h1>
 
-        <h2 class="text-2xl font-semibold flex items-center mb-4">📚 Crowdsourcing Overview</h2>
+    <h2>🌍 What is Crowdsourcing?</h2>
+    <p>
+        <span class="highlight">Crowdsourcing</span> is a method of **gathering contributions from a large group of people**, 
+        typically over the internet, to **solve problems, generate data, or complete complex tasks**.  
+        Instead of relying on a **small group of experts**, crowdsourcing **breaks tasks into smaller pieces** 
+        and distributes them to **many participants**, making it **faster, cheaper, and more diverse**.  
+    </p>
 
-        <h3 class="text-xl font-semibold mt-4">Definition</h3>
-        <p class="text-gray-700">Crowdsourcing involves obtaining input, ideas, services, or content by soliciting contributions from a large group of people, typically via the internet.</p>
+    <h3>🔹 AP CSP Connections</h3>
+    <ul>
+        <li><strong>Big Idea 5: Impact of Computing</strong> – Crowdsourcing **expands access to information & collaboration**.</li>
+        <li><strong>Data Aggregation</strong> – User-generated data **improves AI, machine learning, and predictive models**.</li>
+        <li><strong>Computing Innovations</strong> – Examples include **Wikipedia, AI training, medical research, and citizen science**.</li>
+    </ul>
 
-        <h3 class="text-xl font-semibold mt-4">Goal</h3>
-        <p class="text-gray-700">To solve problems, complete tasks, or gather data more efficiently by leveraging the collective intelligence of the crowd.</p>
-
-        <h2 class="text-2xl font-semibold flex items-center mt-6">🔥 Types of Crowdsourcing</h2>
-
-        <div class="space-y-4">
-            <div>
-                <h3 class="text-lg font-semibold">Crowdfunding</h3>
-                <p class="text-gray-700">Raising small amounts of money from many people to fund a project.</p>
-                <p><strong>Example:</strong> Kickstarter, GoFundMe</p>
-            </div>
-            <div>
-                <h3 class="text-lg font-semibold">Crowd Voting</h3>
-                <p class="text-gray-700">Gathering opinions or preferences from a large group.</p>
-                <p><strong>Example:</strong> Online polls, feedback systems</p>
-            </div>
-            <div>
-                <h3 class="text-lg font-semibold">Microtasking</h3>
-                <p class="text-gray-700">Dividing a large task into smaller tasks distributed among many people.</p>
-                <p><strong>Example:</strong> Amazon Mechanical Turk</p>
-            </div>
-            <div>
-                <h3 class="text-lg font-semibold">Idea Generation/Problem Solving</h3>
-                <p class="text-gray-700">Seeking innovative solutions or suggestions from the crowd.</p>
-                <p><strong>Example:</strong> Open-source software, contests, or hackathons</p>
-            </div>
-            <div>
-                <h3 class="text-lg font-semibold">Data Collection/Validation</h3>
-                <p class="text-gray-700">Using crowds to gather and analyze data.</p>
-                <p><strong>Example:</strong> Google reCAPTCHA, citizen science projects</p>
-            </div>
-        </div>
-
-        <h2 class="text-2xl font-semibold flex items-center mt-6">🧠 How Crowdsourcing Works</h2>
-        <ol class="list-decimal list-inside space-y-2 text-gray-700">
-            <li><strong>Define</strong> the task or problem.</li>
-            <li><strong>Distribute</strong> it to a large group via an online platform.</li>
-            <li><strong>Individuals contribute</strong> responses, ideas, or solutions.</li>
-            <li><strong>Aggregate, analyze, and refine</strong> the collected data/solutions.</li>
-        </ol>
-
-        <h2 class="text-2xl font-semibold flex items-center mt-6">⚡️ Advantages of Crowdsourcing</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-700">
-            <li><strong>Scalability:</strong> Large tasks can be completed quickly with distributed effort.</li>
-            <li><strong>Diverse Perspectives:</strong> Contributions from a variety of individuals lead to creative and innovative solutions.</li>
-            <li><strong>Cost Efficiency:</strong> Often cheaper than hiring experts or traditional methods.</li>
-            <li><strong>Speed:</strong> Parallel processing allows tasks to be completed faster.</li>
-        </ul>
-
-        <h2 class="text-2xl font-semibold flex items-center mt-6">⚠️ Challenges and Risks</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-700">
-            <li><strong>Quality Control:</strong> Ensuring accuracy and reliability of contributions.</li>
-            <li><strong>Bias and Misrepresentation:</strong> Risk of biased or unrepresentative data.</li>
-            <li><strong>Intellectual Property Issues:</strong> Ownership of ideas and solutions contributed by the crowd.</li>
-            <li><strong>Security Concerns:</strong> Handling sensitive data or information securely.</li>
-        </ul>
-
-        <h2 class="text-2xl font-semibold flex items-center mt-6">📝 Examples of Crowdsourcing in Action</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-700">
-            <li><strong>Wikipedia:</strong> Collective knowledge creation and editing.</li>
-            <li><strong>Foldit:</strong> Gamers contribute to protein-folding research to help advance science.</li>
-            <li><strong>Waze:</strong> Real-time traffic data gathered from user inputs.</li>
-            <li><strong>Duolingo:</strong> Crowdsourced translation services to improve learning content.</li>
-            <li><strong>Spotify:</strong> Crowdsourced playlists and data acquired from the Spotify algorithm when users listen to certain songs.</li>
-        </ul>
-
-        <h2 class="text-2xl font-semibold flex items-center mt-6">💡 Applications of Crowdsourcing in Computer Science</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-700">
-            <li><strong>AI Training:</strong> Gathering data for machine learning models.</li>
-            <li><strong>Bug Bounty Programs:</strong> Identifying security vulnerabilities.</li>
-            <li><strong>Content Moderation:</strong> Platforms like YouTube and Facebook use community flagging to review content.</li>
+    <h2>📺 Video: How Gamers Solved a Medical Mystery</h2>
+    <div class="video-section">
+        <iframe src="https://www.youtube.com/embed/RBuy6C_B1N0" title="How Gamers Solved a Medical Mystery"></iframe>
+        <p><strong>How It Relates to Crowdsourcing:</strong></p>
+        <ul>
+            <li>Gamers using **Foldit** solved a **scientific mystery in 10 days** that experts couldn’t solve for **15 years**.</li>
+            <li>Scientists **struggled** to determine an HIV enzyme structure crucial for drug development.</li>
+            <li>By **gamifying protein folding**, Foldit players **outperformed AI models** in finding an accurate structure.</li>
         </ul>
     </div>
+
+    <h2>🔍 Real-World Examples</h2>
+    <div class="flex-container">
+        <div class="box">
+            <h3>🧠 Wikipedia</h3>
+            <p>Volunteers worldwide edit articles.</p>
+            <p><strong>Pros:</strong> Free knowledge, constantly updated.</p>
+            <p><strong>Cons:</strong> Can be biased, fact-checking required.</p>
+        </div>
+        <div class="box">
+            <h3>🎵 Spotify Playlists</h3>
+            <p>Users collaborate to build shared playlists.</p>
+            <p><strong>Pros:</strong> Diverse, community-driven curation.</p>
+            <p><strong>Cons:</strong> Lack of control, potential for spam.</p>
+        </div>
+        <div class="box">
+            <h3>🧪 Foldit</h3>
+            <p>Gamers helped solve a real-world **HIV enzyme mystery**.</p>
+            <p><strong>Pros:</strong> Human problem-solving aids science.</p>
+            <p><strong>Cons:</strong> Requires expert validation.</p>
+        </div>
+    </div>
+
+    <h2>📝 MCQ Practice</h2>
+    <div class="mcq">
+        <p><strong>Which of the following best describes crowdsourcing?</strong></p>
+        <ol type="A">
+            <li>Hiring one expert for a task.</li>
+            <li>Using AI to generate data.</li>
+            <li>Collecting contributions from a large group of people.</li>
+            <li>Outsourcing work to another company.</li>
+        </ol>
+        <button class="reveal-btn" onclick="document.getElementById('answer1').style.display='block'">Reveal Answer</button>
+        <div id="answer1" class="reveal-answer">✅ Correct Answer: C – Crowdsourcing involves obtaining input from a large group.</div>
+    </div>
+
+    <h2>📚 Homework Hack: Crowdsourcing a Playlist</h2>
+    <div class="homework">
+        <p><strong>Task:</strong> We will create a **crowdsourced Spotify playlist** to experience **collaborative computing**.</p>
+        <ol>
+            <li>Click <a href="#">here</a> to join the class playlist.</li>
+            <li>Add at least **2 songs** that fit a chosen theme.</li>
+            <li>Discuss: How does **crowdsourcing** improve or harm the playlist quality?</li>
+        </ol>
+    </div>
+
+    <h2>🚀 Final Thoughts</h2>
+    <p>
+        Crowdsourcing makes solutions **faster, cheaper, and more inclusive**.  
+        However, it raises **challenges in reliability, ethics, and quality control**.  
+        The key to responsible crowdsourcing is **ensuring accuracy, fairness, and ethical use of data**.
+    </p>
+
+</div>
 </body>
+</html>
