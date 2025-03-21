@@ -4,7 +4,8 @@ search_exclude: true
 menu: nav/home.html
 ---
 
-<body>
+
+<body class="bg-[#E56717]">
     <div class="max-w-3xl mx-auto">
         <h1 id="crowdsourcing" class="text-4xl font-bold text-center text-blue-600 mb-6">Crowdsourcing</h1>
 
