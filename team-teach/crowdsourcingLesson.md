@@ -196,6 +196,16 @@ menu: nav/home.html
         <div id="answer1" class="reveal-answer">✅ Correct Answer: C – Crowdsourcing involves obtaining input from a large group.</div>
     </div>
 
+    <h2>📚 Popcorn Hack: Real World Crowdsourcing</h2>
+    <div class="homework">
+        <p><strong>Task:</strong> Crowdsourcing is found almost everywhere online. Find an example of crowdsourcing, and briefly explain how it uses crowdsourcing.</p>
+        <ol>
+          <li><strong>Example</strong>: Wikipedia
+
+          Wikipedia is a crowdsourced online encyclopedia where anyone can contribute by writing, editing, or updating articles. It uses crowdsourcing by relying on volunteers worldwide to provide and verify information, ensuring the content is continuously improved and expanded.</li>
+        </ol>
+    </div>
+
     <h2>📚 Homework Hack: Crowdsourcing a Playlist</h2>
     <div class="homework">
         <p><strong>Task:</strong> We will create a <strong>crowdsourced Spotify playlist</strong> to conduct a crowdsourcing experiment!</p>
