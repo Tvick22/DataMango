@@ -4,11 +4,7 @@ search_exclude: true
 menu: nav/home.html
 ---
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crowdsourcing in Computing</title>
     <style>
         body {
@@ -29,11 +25,12 @@ menu: nav/home.html
         }
         h1 {
             text-align: center;
-            font-size: 2.5em;
+            font-size: 3em;
             color: #2c3e50;
         }
         h2 {
             border-left: 5px solid #ffdd57;
+            font-size: 2.5em;
             padding-left: 10px;
             color: #2c3e50;
         }
@@ -109,19 +106,24 @@ menu: nav/home.html
 <div class="container">
     <h1>📢 Crowdsourcing in Computing</h1>
 
+    <h2>Rate the Mango Introduction (1-10)!</h2>
+    <p>
+      Using the data gathered from the class, we can determine what needs to be improved on our mango. Our audience is the class, and our goal is to get a better introduction to our website, so using <strong>crowdsourcing</strong>, we can improve our introduction!
+    </p>
+
     <h2>🌍 What is Crowdsourcing?</h2>
     <p>
-        <span class="highlight">Crowdsourcing</span> is a method of **gathering contributions from a large group of people**, 
-        typically over the internet, to **solve problems, generate data, or complete complex tasks**.  
-        Instead of relying on a **small group of experts**, crowdsourcing **breaks tasks into smaller pieces** 
-        and distributes them to **many participants**, making it **faster, cheaper, and more diverse**.  
+        <span class="highlight">Crowdsourcing</span> is a method of <strong>gathering contributions from a large group of people</strong>,
+        typically over the internet, to <strong>solve problems, generate data, or complete complex tasks</strong>.
+        Instead of relying on a <strong>small group of experts</strong>, crowdsourcing <strong>breaks tasks into smaller pieces</strong>
+        and distributes them to <strong>many participants</strong>, making it <strong>faster, cheaper, and more diverse</strong>.
     </p>
 
     <h3>🔹 AP CSP Connections</h3>
     <ul>
-        <li><strong>Big Idea 5: Impact of Computing</strong> – Crowdsourcing **expands access to information & collaboration**.</li>
-        <li><strong>Data Aggregation</strong> – User-generated data **improves AI, machine learning, and predictive models**.</li>
-        <li><strong>Computing Innovations</strong> – Examples include **Wikipedia, AI training, medical research, and citizen science**.</li>
+        <li><strong>Big Idea 5: Impact of Computing</strong> – Crowdsourcing <strong>expands access to information & collaboration</strong>.</li>
+        <li><strong>Data Aggregation</strong> – User-generated data <strong>improves AI, machine learning, and predictive models</strong>.</li>
+        <li><strong>Computing Innovations</strong> – Examples include <strong>Wikipedia, AI training, medical research, and citizen science</strong>.</li>
     </ul>
 
     <h2>📺 Video: How Gamers Solved a Medical Mystery</h2>
@@ -129,9 +131,9 @@ menu: nav/home.html
         <iframe src="https://www.youtube.com/embed/RBuy6C_B1N0" title="How Gamers Solved a Medical Mystery"></iframe>
         <p><strong>How It Relates to Crowdsourcing:</strong></p>
         <ul>
-            <li>Gamers using **Foldit** solved a **scientific mystery in 10 days** that experts couldn’t solve for **15 years**.</li>
-            <li>Scientists **struggled** to determine an HIV enzyme structure crucial for drug development.</li>
-            <li>By **gamifying protein folding**, Foldit players **outperformed AI models** in finding an accurate structure.</li>
+            <li>Gamers using <strong>Foldit</strong> solved a <strong>scientific mystery in 10 days</strong> that experts couldn’t solve for <strong>15 years</strong>.</li>
+            <li>Scientists <strong>struggled</strong> to determine an HIV enzyme structure crucial for drug development.</li>
+            <li>By <strong>gamifying protein folding</strong>, Foldit players <strong>outperformed AI models</strong> in finding an accurate structure.</li>
         </ul>
     </div>
 
@@ -151,9 +153,33 @@ menu: nav/home.html
         </div>
         <div class="box">
             <h3>🧪 Foldit</h3>
-            <p>Gamers helped solve a real-world **HIV enzyme mystery**.</p>
+            <p>Gamers helped solve a real-world <strong>HIV enzyme mystery</strong>.</p>
             <p><strong>Pros:</strong> Human problem-solving aids science.</p>
             <p><strong>Cons:</strong> Requires expert validation.</p>
+        </div>
+    </div>
+
+    <h2>📌 Types of Crowdsourcing</h2>
+    <div class="flex-container">
+        <div class="box">
+            <h3>🧠 Wisdom of the Crowd</h3>
+            <p>Collective opinion of a group used for decision-making.</p>
+            <p><strong>Example:</strong> Companies analyze customer feedback for strategy improvements.</p>
+        </div>
+        <div class="box">
+            <h3>🎨 Crowd Creation</h3>
+            <p>Companies ask consumers for new product ideas.</p>
+            <p><strong>Example:</strong> McDonald’s lets customers design and vote on new burgers.</p>
+        </div>
+        <div class="box">
+            <h3>📊 Crowd Voting</h3>
+            <p>Users vote on the best option from multiple choices.</p>
+            <p><strong>Example:</strong> Consumers vote on new product designs or flavors.</p>
+        </div>
+        <div class="box">
+            <h3>💰 Crowdfunding</h3>
+            <p>People donate to fund projects, startups, or charities.</p>
+            <p><strong>Example:</strong> Kickstarter helps creators raise money for new ideas.</p>
         </div>
     </div>
 
@@ -172,21 +198,19 @@ menu: nav/home.html
 
     <h2>📚 Homework Hack: Crowdsourcing a Playlist</h2>
     <div class="homework">
-        <p><strong>Task:</strong> We will create a **crowdsourced Spotify playlist** to experience **collaborative computing**.</p>
+        <p><strong>Task:</strong> We will create a <strong>crowdsourced Spotify playlist</strong> to conduct a crowdsourcing experiment!</p>
         <ol>
             <li>Click <a href="#">here</a> to join the class playlist.</li>
-            <li>Add at least **2 songs** that fit a chosen theme.</li>
-            <li>Discuss: How does **crowdsourcing** improve or harm the playlist quality?</li>
+            <li>Add at least <strong>2 songs</strong> that fit a chosen theme.</li>
+            <li>Discuss: How does <strong>crowdsourcing</strong> improve or harm the playlist quality?</li>
         </ol>
     </div>
 
     <h2>🚀 Final Thoughts</h2>
     <p>
-        Crowdsourcing makes solutions **faster, cheaper, and more inclusive**.  
-        However, it raises **challenges in reliability, ethics, and quality control**.  
-        The key to responsible crowdsourcing is **ensuring accuracy, fairness, and ethical use of data**.
+        Crowdsourcing makes solutions <strong>faster, cheaper, and more inclusive</strong>. However, it raises <strong>challenges in reliability, ethics, and quality control</strong>.
+        The key to responsible crowdsourcing is <strong>ensuring accuracy, fairness, and ethical use of data</strong>.
     </p>
-
 </div>
+
 </body>
-</html>
