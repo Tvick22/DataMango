@@ -104,9 +104,9 @@ menu: nav/home.html
         function createVoxels() {
             const container = document.getElementById("voxels-container");
             const positions = [
-                { top: "35%", left: "30%", label: "Images", font: "'Georgia', serif", link: "_notebooks/2025-3-18-ImagesTeachingPlan.ipynb" },
-                { top: "45%", left: "45%", label: "Base64", font: "'Comic Sans MS', cursive", link: "_notebooks/2025-3-18-Base64TeachingPlan.ipynb" },
-                { top: "55%", left: "60%", label: "Color Codes", font: "'Times New Roman', Times, serif", link: "_notebooks/2025-3-18-ColorCodesTeachingPlan.ipynb" }
+                { top: "35%", left: "30%", label: "Images", font: "'Georgia', serif", link: "./ImagesLesson.html" },
+                { top: "45%", left: "45%", label: "Base64", font: "'Comic Sans MS', cursive", link: "./Base64Lesson.html" },
+                { top: "55%", left: "60%", label: "Color Codes", font: "'Times New Roman', Times, serif", link: "./ColorCodesLesson.html" }
             ];
             
             positions.forEach((pos, index) => {
@@ -118,7 +118,7 @@ menu: nav/home.html
                 voxel.innerText = pos.label;
 
                 voxel.addEventListener("click", function() {
-                    window.location.href = pos.link; // Navigate to the Jupyter Notebook
+                    window.location.href = pos.link; // Navigate to the .html file
                 });
                 
                 setTimeout(() => {
@@ -130,5 +130,17 @@ menu: nav/home.html
             });
         }
     </script>
+
+
+
+<!-- Images Lesson -->
+<a href="./ImagesLesson.md"></a>
+
+<!-- Base64 Lesson -->
+<a href="./Base64Lesson.md"></a>
+
+<!-- Color Codes Lesson -->
+<a href="./ColorCodesLesson.md"></a>
+
 </body>
 </html>
