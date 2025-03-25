@@ -182,6 +182,16 @@ menu: nav/home.html
             <p><strong>Example:</strong> Kickstarter helps creators raise money for new ideas.</p>
         </div>
     </div>
+    <h2>📚 Popcorn Hack 1: Quick Brainstorm</h2>
+<div class="popcorn">
+    <p><strong>Turn to a partner:</strong> Discuss an example of crowdsourcing you’ve used in your daily life. It could be a website, app, or platform. Take 30 seconds each to share!</p>
+</div>
+
+<h2>📚 Popcorn Hack 2: Debate It!</h2>
+<div class="popcorn">
+    <p><strong>Pair up and discuss:</strong> Do you think crowdsourcing is always reliable? Why or why not? Each person takes a side and debates for one minute!</p>
+</div>s
+
 
     <h2>📝 MCQ Practice</h2>
     <div class="mcq">
@@ -196,7 +206,7 @@ menu: nav/home.html
         <div id="answer1" class="reveal-answer">✅ Correct Answer: C – Crowdsourcing involves obtaining input from a large group.</div>
     </div>
 
-    <h2>📚 Popcorn Hack: Real World Crowdsourcing</h2>
+    <h2>📚 Popcorn Hack 3: Real World Crowdsourcing</h2>
     <div class="homework">
         <p><strong>Task:</strong> Crowdsourcing is found almost everywhere online. Find an example of crowdsourcing, and briefly explain how it uses crowdsourcing.</p>
         <ol>
@@ -224,3 +234,4 @@ menu: nav/home.html
 </div>
 
 </body>
+  
