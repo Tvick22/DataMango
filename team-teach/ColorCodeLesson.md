@@ -4,130 +4,186 @@ search_exclude: true
 menu: nav/home.html
 ---
 
-*Learning Objectives*
-
-- Understand what color codes are and why they are important in web development.
-
-- Learn the different types of color codes: Hexadecimal (Hex), RGB, and HSL.
-
-- Apply color codes in a web page using HTML and CSS.
-
-***Introduction To Color Codes:***
-
-**What are Color Codes?**
-
-- Color codes are used in web development to define colors for HTML elements like text, backgrounds, and borders.
-
-- In HTML and CSS, colors are often defined using different color code formats (Hex, RGB, HSL).
-
-**Why Use Color Codes?**
-
-- Color codes ensure consistency in design, making sure the same colors are used throughout the website.
-
-- They make it easier for developers to communicate and work with colors programmatically.
-
-**Types Of Color Codes** 
-
-Hexidecimal Color Codes:
-
-- Hexadecimal color codes are six-character strings representing colors in a base-16 system (using numbers 0-9 and letters A-F).
-
-- The format is #RRGGBB, where:
-
-- RR represents red (00 to FF),
-- GG represents green (00 to FF),
-- BB represents blue (00 to FF).
-
-
-**RGB**
-
-RGB is represented in intensities of color. For example, out of a 255 color scale, ranging from RR,GG,BB. 
-In the RGB model, each of the three primary colors can have an intensity value ranging from 0 to 255.
-
-0 means the color is absent (no light).
-255 means the color is at full intensity (maximum brightness).
-
-Example: 
-
-- rgb(255, 0, 0): This means full red with no green or blue. It will appear as a pure red.
-
-- rgb(0, 255, 0): This means full green with no red or blue. It will appear as a pure green.
-
-- rgb(0, 0, 255): This means full blue with no red or green. It will appear as a pure blue.
-
-**Example**
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hexadecimal Color Example</title>
+  <title>Color Codes 101 🎨</title>
   <style>
     body {
-      background-color: #FF5733;  /* Reddish-orange color */
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
+      margin: 0;
+      padding: 30px;
+      color: #222;
+    }
+    .lesson {
+      max-width: 900px;
+      margin: auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    h1 {
+      font-size: 2.8em;
+      color: #6a1b9a;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.9em;
+      margin-top: 40px;
+      border-bottom: 2px solid #6a1b9a33;
+      padding-bottom: 6px;
+    }
+    .info-block {
+      background: #f3e5f5;
+      padding: 20px;
+      border-left: 6px solid #6a1b9a;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+    .code {
+      font-family: monospace;
+      background: #eee;
+      padding: 10px 15px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    .quiz {
+      background: #ede7f6;
+      padding: 20px;
+      margin-top: 40px;
+      border-left: 6px solid #4527a0;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #6a1b9a;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .answer {
+      display: none;
+      background: #d1c4e9;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 5px;
+    }
+    .discussion {
+      background: #fff3e0;
+      padding: 15px;
+      border-left: 5px solid #ff9800;
+      margin: 30px 0;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to the Color Codes Lesson!</h1>
-  <p>This page uses a hexadecimal color code for the background color.</p>
-</body>
-</html>
+  <div class="lesson">
+    <h1>Color Codes 101 🎨</h1>
 
-**Explanation of the Example:**
+    <h2>✨ Why Should You Care?</h2>
+    <p>Whether you're building a website, designing an app, or creating digital art, <strong>colors are everywhere</strong>. But how does a computer "know" what a color looks like? That’s where <span class="code">color codes</span> come in!</p>
 
-- The background color of the page is set to #FF5733 (a reddish-orange color).
+    <h2>📌 Three Ways to Code a Color</h2>
 
-- #FF5733: FF is the red component (255), 57 is the green component (87), and 33 is the blue component (51).
+    <div class="info-block">
+      <strong>🔷 Hex Codes</strong><br>
+      A 6-digit code starting with <span class="code">#</span> and using numbers and letters (0–9, A–F).<br>
+      <strong>Example:</strong> <span class="code">#FF0000</span> = Red
+    </div>
 
-Converting RGB to Hex:
+    <div class="info-block">
+      <strong>🔶 RGB</strong><br>
+      Uses Red, Green, and Blue values from 0 to 255.<br>
+      <strong>Example:</strong> <span class="code">rgb(255, 0, 0)</span> = Red
+    </div>
 
-- To convert rgb(255, 87, 51) into its Hex equivalent #FF5733, we need to convert each of the RGB components from decimal (base-10) to hexadecimal (base-16):
+    <div class="info-block">
+      <strong>🔷 RGBA</strong><br>
+      Like RGB, but adds Alpha (opacity) from 0 (transparent) to 1 (opaque).<br>
+      <strong>Example:</strong> <span class="code">rgba(255, 0, 0, 0.5)</span> = 50% transparent red
+    </div>
 
-- In order to convert from RBG to Hex, you need to divide the RGB by 16 and the resulting numbers will correspond to letters/numbers
+    <h2>🔍 Color Breakdown</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Color</th>
+          <th>Hex</th>
+          <th>RGB</th>
+          <th>RGBA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🔥 Red</td>
+          <td>#FF0000</td>
+          <td>rgb(255, 0, 0)</td>
+          <td>rgba(255, 0, 0, 1)</td>
+        </tr>
+        <tr>
+          <td>💧 Blue</td>
+          <td>#0000FF</td>
+          <td>rgb(0, 0, 255)</td>
+          <td>rgba(0, 0, 255, 0.4)</td>
+        </tr>
+        <tr>
+          <td>⚪ White</td>
+          <td>#FFFFFF</td>
+          <td>rgb(255, 255, 255)</td>
+          <td>rgba(255, 255, 255, 1)</td>
+        </tr>
+      </tbody>
+    </table>
 
-**For Example:**
+    <h2>🛠️ Where You See This IRL</h2>
+    <ul>
+      <li>🎨 Websites use hex codes in CSS files to style text and backgrounds.</li>
+      <li>🖌️ Photo editors use RGBA to layer images with transparency.</li>
+      <li>📱 Mobile apps use all three formats to keep UI consistent.</li>
+    </ul>
 
-- To convert 255 to hexadecimal, divide 255 by 16:
-- 255 ÷ 16 = 15 remainder 15.
-- The quotient 15 is written as F in Hex.
-- The remainder 15 is also written as F in Hex.
+    <div class="discussion">
+      <strong>🧠 Partner Prompt:</strong><br>
+      If you wanted to make a button that slowly fades in, which format would you use and why?
+    </div>
 
+    <h2>😬 Common Confusions</h2>
+    <ul>
+      <li>⚠️ <strong>Hex vs RGB:</strong> Same color, just different formats. You can convert between them.</li>
+      <li>⚠️ <strong>RGBA doesn't mean a different color:</strong> It just controls the transparency!</li>
+      <li>⚠️ <strong>#FFFFFF is white, not blank:</strong> It just means full red + green + blue.</li>
+    </ul>
 
-The second component is green, which has a value of 87 in decimal.
+    <h2>✅ Quick Quiz</h2>
+    <div class="quiz">
+      <p><strong>Which of these is the correct RGBA format for a 50% transparent green?</strong></p>
+      <ul>
+        <li>A) rgba(0, 255, 0, 1)</li>
+        <li>B) rgba(255, 255, 0, 0.5)</li>
+        <li>C) rgba(0, 255, 0, 0.5)</li>
+        <li>D) rgba(0, 0, 255, 0.5)</li>
+      </ul>
+      <button onclick="document.getElementById('correct').style.display='block'">Show Answer</button>
+      <div id="correct" class="answer">
+        ✅ Correct! <strong>C) rgba(0, 255, 0, 0.5)</strong> is bright green with 50% transparency.
+      </div>
+    </div>
 
-- Decimal to Hex Conversion:
-- To convert 87 to hexadecimal, divide 87 by 16:
-- 87 ÷ 16 = 5 remainder 7.
-- The quotient 5 is written as 5 in Hex.
-- The remainder 7 is written as 7 in Hex.
-
-and so on and so on...
-
-**Summary:**
-
-
-- RGB (255, 87, 51) is a way of saying:
-
-- 100% red intensity, 34% green intensity, and 20% blue intensity.
-- #FF5733 is the Hexadecimal representation of the same color, where:
-- FF represents red, 57 represents green, and 33 represents blue.
-
-**Popcorn Hack #1**
-
-<img src="{{site.baseurl}}/images/Screenshot 2025-03-20 at 9.26.44 AM.png" alt="DataMango" style="width:100%; max-width:600px;">
-
-Analyze 5 likely color combinations for the image above, explain which colors and sets you chose. 
-
-Convert First into RGB, Then Hexidecimal Code.
-
-**Homework Hack #1**
-
-Choose any image you like, and then create data for RGB, Hexidecimal Code, 
-
-IF you add Binary you get extra credit 
-
-Example From Mr Mort.
-
-<img src="{{site.baseurl}}/images/Screenshot 2025-03-20 at 6.01.52 PM.png" alt="DataMango" style="width:100%; max-width:600px;">
-
+    <h2>🔑 TL;DR – What to Remember</h2>
+    <ul>
+      <li><span class="code">#

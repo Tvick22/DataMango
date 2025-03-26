@@ -4,162 +4,186 @@ search_exclude: true
 menu: nav/home.html
 ---
 
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Great Lake Image Color Data</title>
+  <title>Color Codes 101 🎨</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #e6f7f1;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
       margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      height: 100vh;
-      overflow: auto;
-      flex-direction: column;
+      padding: 30px;
+      color: #222;
     }
-    .container {
-      background-color: #A7C7B5;
-      padding: 20px;
+    .lesson {
+      max-width: 900px;
+      margin: auto;
+      background: #ffffff;
+      padding: 40px;
       border-radius: 10px;
-      width: 80%;
-      max-width: 1200px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
-    .meta-data {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    h1 {
+      font-size: 2.8em;
+      color: #6a1b9a;
+      text-align: center;
     }
-    .meta-data h2 {
-      margin: 0;
+    h2 {
+      font-size: 1.9em;
+      margin-top: 40px;
+      border-bottom: 2px solid #6a1b9a33;
+      padding-bottom: 6px;
     }
-    .meta-data img {
-      max-width: 320px;
-      height: auto;
-      border-radius: 8px;
+    .info-block {
+      background: #f3e5f5;
+      padding: 20px;
+      border-left: 6px solid #6a1b9a;
+      border-radius: 5px;
+      margin: 20px 0;
     }
-    .data-table {
+    .code {
+      font-family: monospace;
+      background: #eee;
+      padding: 10px 15px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
-    .data-table th, .data-table td {
-      padding: 10px 15px;
-      text-align: left;
-      border: 1px solid #ccc;
-    }
-    .data-table th {
-      background-color: #89b8b6;
-      color: white;
-      font-size: 18px;
-    }
-    .data-table td {
-      font-size: 16px;
-    }
-    .hex-code {
-      padding: 5px;
-      text-align: center;
-      font-weight: bold;
-      color: white;
-    }
-    .rgb-color {
-      padding: 5px;
-      color: white;
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
       text-align: center;
     }
-    .table-container {
-      overflow-x: auto;
+    .quiz {
+      background: #ede7f6;
+      padding: 20px;
+      margin-top: 40px;
+      border-left: 6px solid #4527a0;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #6a1b9a;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .answer {
+      display: none;
+      background: #d1c4e9;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 5px;
+    }
+    .discussion {
+      background: #fff3e0;
+      padding: 15px;
+      border-left: 5px solid #ff9800;
+      margin: 30px 0;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="meta-data">
-      <div>
-        <h2>Great Lake</h2>
-        <p>Image: great-lake.jpg</p>
-        <p>Format: JPEG</p>
-        <p>Dimensions: (320, 240)</p>
-      </div>
-      <div>
-        <img id="lakeImage" src="great-lake.jpg" alt="Great Lake" />
+  <div class="lesson">
+    <h1>Color Codes 101 🎨</h1>
+
+    <h2>✨ Why Should You Care?</h2>
+    <p>Whether you're building a website, designing an app, or creating digital art, <strong>colors are everywhere</strong>. But how does a computer "know" what a color looks like? That’s where <span class="code">color codes</span> come in!</p>
+
+    <h2>📌 Three Ways to Code a Color</h2>
+
+    <div class="info-block">
+      <strong>🔷 Hex Codes</strong><br>
+      A 6-digit code starting with <span class="code">#</span> and using numbers and letters (0–9, A–F).<br>
+      <strong>Example:</strong> <span class="code">#FF0000</span> = Red
+    </div>
+
+    <div class="info-block">
+      <strong>🔶 RGB</strong><br>
+      Uses Red, Green, and Blue values from 0 to 255.<br>
+      <strong>Example:</strong> <span class="code">rgb(255, 0, 0)</span> = Red
+    </div>
+
+    <div class="info-block">
+      <strong>🔷 RGBA</strong><br>
+      Like RGB, but adds Alpha (opacity) from 0 (transparent) to 1 (opaque).<br>
+      <strong>Example:</strong> <span class="code">rgba(255, 0, 0, 0.5)</span> = 50% transparent red
+    </div>
+
+    <h2>🔍 Color Breakdown</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Color</th>
+          <th>Hex</th>
+          <th>RGB</th>
+          <th>RGBA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🔥 Red</td>
+          <td>#FF0000</td>
+          <td>rgb(255, 0, 0)</td>
+          <td>rgba(255, 0, 0, 1)</td>
+        </tr>
+        <tr>
+          <td>💧 Blue</td>
+          <td>#0000FF</td>
+          <td>rgb(0, 0, 255)</td>
+          <td>rgba(0, 0, 255, 0.4)</td>
+        </tr>
+        <tr>
+          <td>⚪ White</td>
+          <td>#FFFFFF</td>
+          <td>rgb(255, 255, 255)</td>
+          <td>rgba(255, 255, 255, 1)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>🛠️ Where You See This IRL</h2>
+    <ul>
+      <li>🎨 Websites use hex codes in CSS files to style text and backgrounds.</li>
+      <li>🖌️ Photo editors use RGBA to layer images with transparency.</li>
+      <li>📱 Mobile apps use all three formats to keep UI consistent.</li>
+    </ul>
+
+    <div class="discussion">
+      <strong>🧠 Partner Prompt:</strong><br>
+      If you wanted to make a button that slowly fades in, which format would you use and why?
+    </div>
+
+    <h2>😬 Common Confusions</h2>
+    <ul>
+      <li>⚠️ <strong>Hex vs RGB:</strong> Same color, just different formats. You can convert between them.</li>
+      <li>⚠️ <strong>RGBA doesn't mean a different color:</strong> It just controls the transparency!</li>
+      <li>⚠️ <strong>#FFFFFF is white, not blank:</strong> It just means full red + green + blue.</li>
+    </ul>
+
+    <h2>✅ Quick Quiz</h2>
+    <div class="quiz">
+      <p><strong>Which of these is the correct RGBA format for a 50% transparent green?</strong></p>
+      <ul>
+        <li>A) rgba(0, 255, 0, 1)</li>
+        <li>B) rgba(255, 255, 0, 0.5)</li>
+        <li>C) rgba(0, 255, 0, 0.5)</li>
+        <li>D) rgba(0, 0, 255, 0.5)</li>
+      </ul>
+      <button onclick="document.getElementById('correct').style.display='block'">Show Answer</button>
+      <div id="correct" class="answer">
+        ✅ Correct! <strong>C) rgba(0, 255, 0, 0.5)</strong> is bright green with 50% transparency.
       </div>
     </div>
-    
-    <div class="table-container">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>RGB</th>
-            <th>Hex Code</th>
-            <th>Binary</th>
-          </tr>
-        </thead>
-        <tbody id="colorData">
-          <!-- Color data will be populated here -->
-        </tbody>
-      </table>
-    </div>
-  </div>
 
-  <script>
-    // JavaScript to extract pixel color data and populate the table
-    const image = document.getElementById("lakeImage");
-    const tableBody = document.getElementById("colorData");
-
-    // Function to extract pixel color data
-    function getImageColors() {
-      const canvas = document.createElement("canvas");
-      const context = canvas.getContext("2d");
-
-      // Wait for the image to load
-      image.onload = () => {
-        canvas.width = image.width;
-        canvas.height = image.height;
-        context.drawImage(image, 0, 0, canvas.width, canvas.height);
-
-        // Get pixel data from the image
-        const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-        const pixels = imageData.data;
-
-        // Loop through each pixel and extract the RGB, Hex, and Binary values
-        let rowCount = 1;
-        for (let i = 0; i < pixels.length; i += 4) {
-          const r = pixels[i];
-          const g = pixels[i + 1];
-          const b = pixels[i + 2];
-          const rgb = `rgb(${r}, ${g}, ${b})`;
-          const hex = `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase()}`;
-          const binary = `${r.toString(2).padStart(8, '0')} ${g.toString(2).padStart(8, '0')} ${b.toString(2).padStart(8, '0')}`;
-
-          // Add a new row in the table
-          const row = document.createElement("tr");
-          row.innerHTML = `
-            <td>${rowCount}</td>
-            <td class="rgb-color">${rgb}</td>
-            <td class="hex-code" style="background-color: ${hex};">${hex}</td>
-            <td>${binary}</td>
-          `;
-          tableBody.appendChild(row);
-          rowCount++;
-
-          // Optional: Stop after a few rows to improve performance
-          if (rowCount > 100) break;
-        }
-      };
-    }
-
-    // Call the function to extract and display colors
-    getImageColors();
-  </script>
-</body>
-</html>
+    <h2>🔑 TL;DR – What to Remember</h2>
+    <ul>
+      <li><span class="code">#

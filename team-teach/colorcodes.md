@@ -106,7 +106,7 @@ menu: nav/home.html
             const positions = [
                 { top: "35%", left: "30%", label: "Images", font: "'Georgia', serif", link: "./ImagesLesson.html" },
                 { top: "45%", left: "45%", label: "Base64", font: "'Comic Sans MS', cursive", link: "./Base64Lesson.html" },
-                { top: "55%", left: "60%", label: "Color Codes", font: "'Times New Roman', Times, serif", link: "./ColorCodesLesson.html" }
+                { top: "55%", left: "60%", label: "Color Codes", font: "'Times New Roman', Times, serif", link: "./ColorCodeLesson.md" }
             ];
             
             positions.forEach((pos, index) => {
@@ -140,7 +140,7 @@ menu: nav/home.html
 <a href="./Base64Lesson.md"></a>
 
 <!-- Color Codes Lesson -->
-<a href="./ColorCodesLesson.md"></a>
+<a href="./ColorCodeLesson.md"></a>
 
 </body>
 </html>
