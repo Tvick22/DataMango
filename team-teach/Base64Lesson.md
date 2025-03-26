@@ -107,11 +107,27 @@ menu: nav/home.html
         <span class="highlight">Base64</span> encoding is a method of converting binary data into a format that can be safely transmitted as text. It ensures compatibility with text-based systems by converting data into a sequence of readable characters.
     </p>
 
-    <h2>🔑 Why Use Base64?</h2>
+
+<h2>🔄 Understanding Base64 Encoding and Decoding</h2>
+<div style="background: #f3f4f6; padding: 15px; border-radius: 8px; font-size: 1.1em;">
+    <p><strong>Base64 Encoding:</strong> Converts binary data (like files or images) into a text format that uses only readable characters (A-Z, a-z, 0-9, +, /). This makes it safe to transmit over text-based systems.</p>
+    <p><strong>Base64 Decoding:</strong> Reverses the encoding process, converting the Base64 text back into its original binary form.</p>
+    <p style="font-style: italic; color: #555;">Think of encoding as translating data into a "safe-to-send" language and decoding as restoring
+<ul>
+    <li><strong>Encoded Data:</strong> Increases the size by about 33% compared to the original data.</li>
+    <li><strong>Decoded Data:</strong> Returns to its original size.</li>
+</ul>
+
+
+<div style="margin-top: 20px;"></div>
+
+<h2>🔑 Why Use Base64?</h2>
     <ul>
         <li>- To safely transmit binary files (e.g., images) via text-based protocols like email.</li>
         <li>- To avoid issues with non-printable characters causing errors in systems.</li>
     </ul>
+
+<div style="margin-top: 20px;"></div>
 
     <h2>🧠 How Does Base64 Work?</h2>
     <p>Here’s an overview of the encoding process:</p>
@@ -166,12 +182,10 @@ print(decoded)  # Output: Hello, Base64!
 </pre>
     </div>
 
-    <h2>📌 Interactive Tasks</h2>
+    <h2>📌 Popcorn Hack</h2>
+    
     <div class="task">
-        <strong>1. Decode Base64:</strong> Try decoding <code>U2Nob29sIHByb2plY3RzIGFyZSBjdXJpb3VzIQ==</code> and explain its meaning.
-    </div>
-    <div class="task">
-        <strong>2. Find It in Your Life:</strong> Look for Base64 by checking the source code of a website (Ctrl+U or Cmd+U) and searching for <code>data:image</code>. It’s how some images are stored!
+        <strong>Turn to a partner and discuss: What is one downside of Base64 in the real world?</strong>
     </div>
 
 <h2>⚠️ Drawbacks of Base64 Encoding</h2>
@@ -200,6 +214,23 @@ print(decoded)  # Output: Hello, Base64!
 </div>
 
 
+<h2>🤔 Practice MCQ</h2>
+<div class="mcq" style="background: #e8f5e9; padding: 15px; border-radius: 8px; font-size: 1.1em;">
+    <p><strong>Which of the following is true about Base64 encoding?</strong></p>
+    <ul style="list-style-type: none; padding-left: 0;">
+        <li><input type="radio" name="mcq" id="option1"> A) It encrypts data to make it secure.</li>
+        <li><input type="radio" name="mcq" id="option2"> B) It increases the size of the data.</li>
+        <li><input type="radio" name="mcq" id="option3"> C) It reduces the size of the data.</li>
+        <li><input type="radio" name="mcq" id="option4"> D) It ensures data is unreadable by humans.</li>
+    </ul>
+    <button class="reveal-btn" onclick="document.getElementById('reveal-answer').style.display='block'" style="background: #4caf50; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Reveal Answer</button>
+    <div id="reveal-answer" class="reveal-answer" style="display: none; background: #c8e6c9; color: black; padding: 15px; margin-top: 10px; border-radius: 5px;">
+        <p><strong>Correct Answer:</strong> B) It increases the size of the data.</p>
+        <p>Base64 encoding increases the size of data, as it converts binary data into text characters.</p>
+    </div>
+</div>
+
+
     <h2>🎥 Learn More</h2>
     <iframe class="video-frame" src="https://www.youtube.com/embed/5g0aiUNFkEc" allowfullscreen></iframe>
     
@@ -210,7 +241,3 @@ print(decoded)  # Output: Hello, Base64!
         <li>- It’s widely used in APIs, email systems, and authentication tokens.</li>
         <li>- It’s not encryption—don’t use it for securing data!</li>
     </ul>
-</div>
-
-</body>
-</html>
