@@ -231,8 +231,6 @@ print(decoded)  # Output: Hello, Base64!
 </div>
 
 
-    <h2>🎥 Learn More</h2>
-    <iframe class="video-frame" src="https://www.youtube.com/embed/5g0aiUNFkEc" allowfullscreen></iframe>
     
 
     <h2>📌 Key Points to Remember</h2>
