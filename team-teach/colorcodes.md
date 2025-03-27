@@ -133,14 +133,5 @@ menu: nav/home.html
 
 
 
-<!-- Images Lesson -->
-<a href="./ImagesLesson.md"></a>
-
-<!-- Base64 Lesson -->
-<a href="./Base64Lesson.md"></a>
-
-<!-- Color Codes Lesson -->
-<a href="./ColorCodeLesson.md"></a>
-
 </body>
 </html>
