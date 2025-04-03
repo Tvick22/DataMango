@@ -118,6 +118,30 @@ menu: nav/home.html
       <strong>Example:</strong> <span class="code">rgba(255, 0, 0, 0.5)</span> = 50% transparent red
     </div>
 
+    <h2>🖥️ How Computers Interpret Colors</h2>
+    <p>Computers store colors as a combination of red, green, and blue light values. The higher the value, the more intense that color appears. Mixing these values produces different shades, just like mixing paint.</p>
+
+    <h2>🎨 More Color Formats</h2>
+    <div class="info-block">
+      <strong>🟡 HSL (Hue, Saturation, Lightness)</strong><br>
+      Instead of mixing red, green, and blue, HSL represents colors based on their hue (color type), saturation (intensity), and lightness (brightness).<br>
+      <strong>Example:</strong> <span class="code">hsl(120, 100%, 50%)</span> = Pure Green
+    </div>
+
+    <div class="info-block">
+      <strong>🌈 CMYK (Cyan, Magenta, Yellow, Black)</strong><br>
+      Used in printing, CMYK works by subtracting light instead of adding it like RGB. Printers use ink instead of light to create colors.<br>
+      <strong>Example:</strong> (0, 100, 100, 0) = Red in CMYK
+    </div>
+
+    <h2>🌎 Real-World Uses of Color Codes</h2>
+    <ul>
+      <li>📱 <b>User Interfaces:</b> Apps and websites use hex or RGBA for text, buttons, and backgrounds.</li>
+      <li>🎥 <b>Video Games & Graphics:</b> Game engines use color codes for textures and lighting.</li>
+      <li>🖨️ <b>Printing:</b> CMYK colors ensure accurate prints.</li>
+      <li>🎞️ <b>Film & TV:</b> Post-production uses color correction with RGB and HSL.</li>
+    </ul>
+
     <h2>🔍 Color Breakdown</h2>
     <table>
       <thead>
@@ -150,40 +174,17 @@ menu: nav/home.html
       </tbody>
     </table>
 
-    <h2>🛠️ Where You See This IRL</h2>
-    <ul>
-      <li>🎨 Websites use hex codes in CSS files to style text and backgrounds.</li>
-      <li>🖌️ Photo editors use RGBA to layer images with transparency.</li>
-      <li>📱 Mobile apps use all three formats to keep UI consistent.</li>
-    </ul>
-
-    <div class="discussion">
-      <strong>🧠 Partner Prompt:</strong><br>
-      If you wanted to make a button that slowly fades in, which format would you use and why?
-    </div>
-
-    <h2>😬 Common Confusions</h2>
-    <ul>
-      <li>⚠️ <strong>Hex vs RGB:</strong> Same color, just different formats. You can convert between them.</li>
-      <li>⚠️ <strong>RGBA doesn't mean a different color:</strong> It just controls the transparency!</li>
-      <li>⚠️ <strong>#FFFFFF is white, not blank:</strong> It just means full red + green + blue.</li>
-    </ul>
-
-    <h2>✅ Quick Quiz</h2>
-    <div class="quiz">
-      <p><strong>Which of these is the correct RGBA format for a 50% transparent green?</strong></p>
-      <ul>
-        <li>A) rgba(0, 255, 0, 1)</li>
-        <li>B) rgba(255, 255, 0, 0.5)</li>
-        <li>C) rgba(0, 255, 0, 0.5)</li>
-        <li>D) rgba(0, 0, 255, 0.5)</li>
-      </ul>
-      <button onclick="document.getElementById('correct').style.display='block'">Show Answer</button>
-      <div id="correct" class="answer">
-        ✅ Correct! <strong>C) rgba(0, 255, 0, 0.5)</strong> is bright green with 50% transparency.
-      </div>
-    </div>
-
     <h2>🔑 TL;DR – What to Remember</h2>
     <ul>
-      <li><span class="code">#
+      <li><span class="code">#FF0000</span> = Hex code for Red</li>
+      <li><span class="code">rgb(0, 255, 0)</span> = RGB format for Green</li>
+      <li><span class="code">rgba(0, 0, 255, 0.5)</span> = 50% transparent Blue</li>
+      <li>Hex, RGB, and RGBA all represent the same colors, just in different ways!</li>
+    </ul>
+
+    <footer style="margin-top: 40px; text-align: center; font-size: 0.9em; color: #666;">
+      <p>© 2025 Color Codes 101. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
