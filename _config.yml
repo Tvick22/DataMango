@@ -4,3 +4,12 @@ owner_name: Trevor Vick
 github_username: Tvick22
 github_repo: "DataMango"
 baseurl: "/DataMango"
+colors:
+  primary: "#FF9F1C" # Mango Orange
+  secondary: "#015A65" # Deep Teal
+  background: "#FAFAF8" # Off-White
+  text: "#333333" # Charcoal Gray
+  accent:
+    green: "#007F5F" # Forest Green
+    red: "#F25C54" # Coral Red
+  neutral: "#F4E8C1" # Soft Beige
