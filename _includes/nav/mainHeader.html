@@ -1,0 +1,72 @@
+<nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+    <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+    >
+        <div
+            class="flex items-center space-x-3 rtl:space-x-reverse text-[{{site.colors.primary}}] text-2xl font-bold mb-3"
+        >
+            Data Mango
+        </div>
+        <button
+            type="button"
+            class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none"
+            aria-controls="navbar-hamburger"
+            aria-expanded="false"
+            id="main-hamburger-menu"
+        >
+            <span class="sr-only">Open main menu</span>
+            <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+            >
+                <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 1h15M1 7h15M1 13h15"
+                />
+            </svg>
+        </button>
+        <div hidden class="w-full" id="menu-hamburger">
+            <ul
+                class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
+            >
+                <li>
+                    <a
+                        href="{{site.baseurl}}/"
+                        class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-[{{site.colors.primary}}]"
+                        aria-current="page"
+                        >Home</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-[{{site.colors.secondary}}] hover:text-white"
+                        >Documentation</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-[{{site.colors.accent.red}}] hover:text-white"
+                        >Contact</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const hamburgerMenu = document.getElementById("main-hamburger-menu");
+    const navMenu = document.getElementById("menu-hamburger");
+
+    hamburgerMenu.addEventListener("click", () => {
+        navMenu.hidden = !navMenu.hidden;
+    });
+</script>
