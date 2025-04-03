@@ -2,7 +2,7 @@
 layout: base
 title: Flocker Social Media Site
 search_exclude: true
-menu:
+menu: nav/mainHeader.html
 ---
 <html lang="en">
 <head>
@@ -108,7 +108,7 @@ menu:
     // Animation loop: clear canvas, draw lane lines, and animate cars
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       // Draw lane lines
       ctx.strokeStyle = '#015A65';
       ctx.lineWidth = 2;
@@ -118,7 +118,7 @@ menu:
         ctx.lineTo(canvas.width, lane);
         ctx.stroke();
       });
-      
+
       // Draw and update cars
       cars.forEach(car => {
         ctx.fillStyle = car.color;
@@ -128,7 +128,7 @@ menu:
           car.x = -car.width;
         }
       });
-      
+
       requestAnimationFrame(animate);
     }
     animate();
