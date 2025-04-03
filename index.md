@@ -4,16 +4,134 @@ title: Flocker Social Media Site
 search_exclude: true
 menu:
 ---
-
+<html lang="en">
 <head>
-    <title>Data Mango - Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Mango - Home</title>
+  <!-- Tailwind CSS CDN (remove if using a local build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Mango icon spin animation */
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .rotate-slow {
+      animation: spin 10s linear infinite;
+    }
+    /* Canvas covers full screen behind content */
+    #trafficCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
 </head>
+<body class="bg-[#FAFAF8] text-[#333333] font-sans relative">
+  <!-- Canvas for Traffic Animation -->
+  <canvas id="trafficCanvas"></canvas>
 
-<body class="bg-[#FAFAF8] text-[#333333]">
-    <div class="flex items-center justify-center h-screen">
-    <div class="bg-white rounded-xl shadow-lg p-6 w-1/2 h-1/2 text-center">
-        <h2 class="text-[#FF9F1C] text-2xl font-bold mb-3">Welcome to Data Mango</h2>
-        <p class="text-[#015A65] text-lg">A CSP Tri 3 Project</p>
+  <!-- Hero Content -->
+  <div class="flex items-center justify-center min-h-screen px-4">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-xl text-center">
+      <!-- Rotating Mango Icon -->
+      <div class="flex justify-center mb-4">
+        <div class="rotate-slow">
+          <svg width="60" height="60" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#FF9F1C" stroke-width="2">
+              <ellipse cx="32" cy="32" rx="20" ry="26" fill="#FF9F1C"/>
+              <path d="M32 10 C35 5, 45 5, 48 12" stroke="#007F5F" stroke-width="3" fill="none"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <!-- Title & Description -->
+      <h1 class="text-4xl font-bold text-[#FF9F1C] mb-2">Data Mango</h1>
+      <p class="text-xl text-[#015A65] mb-6">CSP Tri 3 Project</p>
+      <!-- Interactive Buttons -->
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="3d-traffic.html" class="px-4 py-2 rounded-full bg-[#FF9F1C] text-white shadow hover:bg-[#e88d15] transition">
+          3D Traffic Data
+        </a>
+        <a href="predictions.html" class="px-4 py-2 rounded-full bg-[#007F5F] text-white shadow hover:bg-[#006b50] transition">
+          Traffic Predictions
+        </a>
+        <a href="map.html" class="px-4 py-2 rounded-full bg-[#015A65] text-white shadow hover:bg-[#01404a] transition">
+          Interactive Map
+        </a>
+        <a href="https://github.com/users/Tvick22/projects/4" target="_blank" class="px-4 py-2 rounded-full bg-[#F25C54] text-white shadow hover:bg-[#e04d48] transition">
+          View Timeline
+        </a>
+        <a href="https://github.com/Tvick22/DataMango" target="_blank" class="px-4 py-2 rounded-full bg-[#FF9F1C] text-white shadow hover:bg-[#e88d15] transition">
+          GitHub
+        </a>
+      </div>
     </div>
-    </div>
+  </div>
+
+  <!-- Traffic Animation Script -->
+  <script>
+    const canvas = document.getElementById('trafficCanvas');
+    const ctx = canvas.getContext('2d');
+    let cars = [];
+    let lanes = [];
+
+    // Adjust canvas to fill the window
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      // Define three lanes at different vertical positions
+      lanes = [canvas.height * 0.3, canvas.height * 0.5, canvas.height * 0.7];
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    // Create car objects with random speed and color (red or green accent)
+    function createCars(num) {
+      cars = [];
+      for (let i = 0; i < num; i++) {
+        const lane = lanes[Math.floor(Math.random() * lanes.length)];
+        cars.push({
+          x: Math.random() * canvas.width,
+          y: lane - 10, // Adjust Y position to center within lane
+          width: 30,
+          height: 20,
+          speed: 1 + Math.random() * 2,
+          color: Math.random() > 0.5 ? '#F25C54' : '#007F5F'
+        });
+      }
+    }
+    createCars(10);
+
+    // Animation loop: clear canvas, draw lane lines, and animate cars
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw lane lines
+      ctx.strokeStyle = '#015A65';
+      ctx.lineWidth = 2;
+      lanes.forEach(lane => {
+        ctx.beginPath();
+        ctx.moveTo(0, lane);
+        ctx.lineTo(canvas.width, lane);
+        ctx.stroke();
+      });
+      
+      // Draw and update cars
+      cars.forEach(car => {
+        ctx.fillStyle = car.color;
+        ctx.fillRect(car.x, car.y, car.width, car.height);
+        car.x += car.speed;
+        if (car.x > canvas.width) {
+          car.x = -car.width;
+        }
+      });
+      
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
 </body>
+</html>
