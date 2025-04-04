@@ -188,3 +188,15 @@ menu: nav/home.html
   </div>
 </body>
 </html>
+
+<script>
+  function goBack() {
+    window.location.href = 'Base64Lesson.html'; // 👈 example of your previous page
+  }
+</script>
+
+
+<div class="d-flex justify-content-center py-4">
+  <button class="btn btn-custom me-3" onclick="goBack()">← Back</button>
+  <button class="btn btn-custom" onclick="goNext()">Next →</button>
+</div>

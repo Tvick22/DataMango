@@ -240,3 +240,20 @@ print(decoded)  # Output: Hello, Base64!
         <li>- It’s widely used in APIs, email systems, and authentication tokens.</li>
         <li>- It’s not encryption—don’t use it for securing data!</li>
     </ul>
+
+<script>
+  function goBack() {
+    window.location.href = 'ImagesLesson.html'; // 👈 example of your previous page
+  }
+
+  function goNext() {
+    window.location.href = 'ColorCodeLesson.html'; // 👈 example of your next page
+  }
+</script>
+
+
+<div class="d-flex justify-content-center py-4">
+  <button class="btn btn-custom me-3" onclick="goBack()">← Back</button>
+  <button class="btn btn-custom" onclick="goNext()">Next →</button>
+</div>
+

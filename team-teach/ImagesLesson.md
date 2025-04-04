@@ -232,3 +232,16 @@ As Hex:
 
 </body>
 </html>
+
+<script>
+
+  function goNext() {
+    window.location.href = 'Base64Lesson.html'; // 👈 example of your next page
+  }
+</script>
+
+
+<div class="d-flex justify-content-center py-4">
+  <button class="btn btn-custom me-3" onclick="goBack()">← Back</button>
+  <button class="btn btn-custom" onclick="goNext()">Next →</button>
+</div>
