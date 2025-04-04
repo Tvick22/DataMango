@@ -1,41 +1,16 @@
 ---
 layout: base
-title: Flocker Social Media Site
 search_exclude: true
 menu: nav/mainHeader.html
 ---
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Mango - Home</title>
-  <!-- Tailwind CSS CDN (remove if using a local build) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Mango icon spin animation */
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    .rotate-slow {
-      animation: spin 10s linear infinite;
-    }
-    /* Canvas covers full screen behind content */
-    #trafficCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-  </style>
-</head>
-<body class="bg-[#FAFAF8] text-[#333333] font-sans relative">
+
+<div class="bg-[#FAFAF8] text-[#333333]">
   <!-- Canvas for Traffic Animation -->
   <canvas id="trafficCanvas"></canvas>
 
   <!-- Hero Content -->
   <div class="flex items-center justify-center min-h-screen px-4">
-    <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-xl text-center">
+    <div class="z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-xl text-center">
       <!-- Rotating Mango Icon -->
       <div class="flex justify-center mb-4">
         <div class="rotate-slow">
@@ -133,5 +108,21 @@ menu: nav/mainHeader.html
     }
     animate();
   </script>
-</body>
-</html>
+
+  <style>
+  /* Mango icon spin animation */
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .rotate-slow {
+    animation: spin 10s linear infinite;
+  }
+  /* Canvas covers full screen behind content */
+  #trafficCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+</style>
+</div>

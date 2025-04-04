@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang='{{ page.lang | default: site.lang | default: "en" }}'>
     {%- if page.menu -%} {% include {{page.menu}} html=content %} {%- endif -%}
-    <body>
+    <body class="bg-gray-100">
         <main class="page-content" aria-label="Content">
-            <div class="wrapper bg-white">{{ content }}</div>
+            <div class="wrapper bg-[{{site.colors.background}}]">
+                {{ content }}
+            </div>
         </main>
     </body>
     <script src="https://cdn.tailwindcss.com"></script>
