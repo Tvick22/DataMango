@@ -182,9 +182,82 @@ menu: nav/home.html
       <li>Hex, RGB, and RGBA all represent the same colors, just in different ways!</li>
     </ul>
 
+
+<html>
+  <head>
+    <title>Homework Hack</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f4f8;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      .container {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        max-width: 700px;
+        padding: 2rem;
+        text-align: center;
+        transition: 0.2s ease;
+      }
+
+      .container:hover {
+        transform: scale(1.01);
+      }
+
+      .color-box {
+        width: 120px;
+        height: 60px;
+        background-color: #4CAF50;
+        margin: 1rem auto;
+        border-radius: 8px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .b64-img {
+        margin: 1rem auto;
+        width: 100px;
+        height: auto;
+      }
+
+      .prompt {
+        background: #e3f2fd;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 2rem;
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>💻 Homework Hack:</h1>
+
+
+      <div class="prompt">
+        In your notebook, explain the following, along with one application to YOUR work:<br>
+        – What is a hex color code? What are some examples?<br>
+        – What is Base64 and how is it used with images?<br>
+        – Why might you use Base64 instead of a regular image file?
+      </div>
+      <b>Then,</b> Insert an image into your Jupyter notebook and explain how it’s stored and displayed.
+    </div>
+  </body>
+</html>
+
+
+
+
     <footer style="margin-top: 40px; text-align: center; font-size: 0.9em; color: #666;">
       <p>© 2025 Color Codes 101. All rights reserved.</p>
     </footer>
-  </div>
-</body>
-</html>
