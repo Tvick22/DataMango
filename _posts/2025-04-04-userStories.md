@@ -23,3 +23,19 @@ menu: nav/mainHeader.html
 - Use a time slider to view past or predicted future traffic trends
 
 - Switch between map views
+
+**Wyatt's User Story**
+
+- First, I opened up the page
+
+- I was welcomed to an easy to use, well-formatted website
+
+- I clicked on the "Traffic Map"
+
+- I used the interactive map to find the quickest way home by swiping left, right, up, down, and zooming in
+
+- I was easily able to identify where would have the most traffic by using the color-coded map
+
+- I tried my new route home and found that it was much quicker than before, and there was almost no traffic
+
+
