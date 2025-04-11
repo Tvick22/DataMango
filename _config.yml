@@ -17,3 +17,5 @@ colors:
     red: "#F25C54" # Coral Red
     red-hover: "#e04d48"
   neutral: "#F4E8C1" # Soft Beige
+header_pages:
+  - browse-documentation.md

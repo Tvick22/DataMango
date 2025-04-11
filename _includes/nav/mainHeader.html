@@ -37,25 +37,25 @@
                 <li>
                     <a
                         href="{{site.baseurl}}/"
-                        class="z-20 block py-2 px-3 text-gray-900 rounded-sm hover:bg-[{{site.colors.primary}}]"
-                        aria-current="page"
-                        >Home</a
+                        class="z-20 block py-2 px-3 text-gray-900 rounded-sm hover:bg-[{{ site.colors.primary }}]"
                     >
+                        Home
+                    </a>
                 </li>
+
+                {% assign headers = site.header_pages %} {% for page in
+                site.pages %} {% if headers contains page.path %} {% assign
+                hover_color = page.menu_color %} {% assign hover_text_color =
+                page.menu_text_color %}
                 <li>
                     <a
-                        href="{{site.baseurl}}/browse-documentation"
-                        class="z-20 block py-2 px-3 text-gray-900 rounded-sm hover:bg-[{{site.colors.secondary}}] hover:text-white"
-                        >Documentation</a
+                        href="{{site.baseurl}}/{{ page.path | remove: '.md' }}"
+                        class="z-20 block py-2 px-3 text-gray-900 rounded-sm hover:bg-[{{ site.colors[hover_color] }}] hover:text-{{ hover_text_color }}"
                     >
+                        {{ page.title }}
+                    </a>
                 </li>
-                <li>
-                    <a
-                        href="#"
-                        class="z-20 block py-2 px-3 text-gray-900 rounded-sm hover:bg-[{{site.colors.accent.red}}] hover:text-white"
-                        >Contact</a
-                    >
-                </li>
+                {% endif %} {% endfor %}
             </ul>
         </div>
     </div>
