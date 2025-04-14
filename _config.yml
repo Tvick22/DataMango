@@ -11,6 +11,7 @@ colors:
   secondary-hover: "#01404a"
   background: "#FAFAF8" # Off-White
   text: "#333333" # Charcoal Gray
+  red: "#F25C54" # Coral Red
   accent:
     green: "#007F5F" # Forest Green
     green-hover: "#006b50"
@@ -19,3 +20,4 @@ colors:
   neutral: "#F4E8C1" # Soft Beige
 header_pages:
   - browse-documentation.md
+  - contact.md
