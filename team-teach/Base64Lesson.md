@@ -186,7 +186,7 @@ print(decoded)  # Output: Hello, Base64!
     <h2>📌 Popcorn Hack</h2>
     
     <div class="task">
-        <strong>Turn to a partner and discuss: What is one downside of Base64 in the real world?</strong>
+        <strong>Turn to a partner and discuss: What do you think could be one downside of Base64 in the real world?</strong>
     </div>
 
 <h2>⚠️ Drawbacks of Base64 Encoding</h2>
