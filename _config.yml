@@ -21,3 +21,5 @@ colors:
 header_pages:
   - browse-documentation.md
   - contact.md
+  - admin/dashboard.md
+  - create-review.md
