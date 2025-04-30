@@ -14,7 +14,7 @@ title: Review Map
 <script src="https://api.mapbox.com/mapbox-gl-js/v3.11.0/mapbox-gl.js"></script>
 
 <script>
-mapboxgl.accessToken = "DEEZNUTS";
+mapboxgl.accessToken = "pk.eyJ1IjoidHZpY2syMiIsImEiOiJjbWE0NnZnMjgwM3hqMmxxMGozcG9lZGV3In0.Uzle_LswY-hBLs45_SdBoQ";
 
 const map = new mapboxgl.Map({
   container: "map", // container ID
