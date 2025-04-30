@@ -48,12 +48,21 @@
                 hover_color = page.menu_color %} {% assign hover_text_color =
                 page.menu_text_color %}
                 <li>
+                    {% if page.permalink %}
+                    <a
+                        href="{{site.baseurl}}{{ page.permalink }}"
+                        class="z-20 block py-2 px-3 text-gray-900 rounded-sm hover:bg-[{{ site.colors[hover_color] }}] hover:text-{{ hover_text_color }}"
+                    >
+                        {{ page.title }}
+                    </a>
+                    {% else %}
                     <a
                         href="{{site.baseurl}}/{{ page.path | remove: '.md' }}"
                         class="z-20 block py-2 px-3 text-gray-900 rounded-sm hover:bg-[{{ site.colors[hover_color] }}] hover:text-{{ hover_text_color }}"
                     >
                         {{ page.title }}
                     </a>
+                    {% endif %}
                 </li>
                 {% endif %} {% endfor %}
             </ul>

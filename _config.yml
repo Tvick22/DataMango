@@ -23,3 +23,5 @@ header_pages:
   - contact.md
   - admin/dashboard.md
   - create-review.md
+  - review_map.md
+  - navigation/authentication/login.md

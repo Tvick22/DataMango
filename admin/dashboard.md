@@ -32,17 +32,21 @@ menu_text_color: black
     <!-- Road Management Section -->
     <section id="road-management" class="hidden">
       <h2 class="text-4xl font-semibold text-[{{site.colors.secondary}}] mb-6">Road Management</h2>
-      <p class="text-lg text-gray-600 mb-8">Manage infrastructure and maintenance operations for city roadways. Below are the available actions.</p>
-      <div class="flex flex-wrap gap-8 justify-start">
-        <button class="w-full md:w-[300px] px-6 py-4 bg-[{{site.colors.primary}}] hover:bg-[{{site.colors.primary-hover}}] text-white font-semibold rounded-lg shadow-lg transition-all transform hover:scale-105">
-          Add New Road
-        </button>
-        <button class="w-full md:w-[300px] px-6 py-4 bg-[{{site.colors.accent.green}}] hover:bg-[{{site.colors.accent.green-hover}}] text-white font-semibold rounded-lg shadow-lg transition-all transform hover:scale-105">
-          Update Road Status
-        </button>
-        <button class="w-full md:w-[300px] px-6 py-4 bg-[{{site.colors.red}}] hover:bg-[{{site.colors.red-hover}}] text-white font-semibold rounded-lg shadow-lg transition-all transform hover:scale-105">
-          Schedule Maintenance
-        </button>
+      <div class="w-full flex flex-wrap justify-center">
+        <div class="w-full mt-8 overflow-x-auto">
+          <table class="min-w-full  divide-y divide-gray-200 border border-gray-300 rounded-xl shadow-lg bg-white">
+            <thead class="bg-[{{site.colors.secondary}}] text-white">
+              <tr>
+                <th scope="col" class="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wider">Road ID</th>
+                <th scope="col" class="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wider">Road Name</th>
+                <th scope="col" class="px-6 py-3 text-right text-sm font-semibold uppercase tracking-wider">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="road-table-body" class="divide-y divide-gray-100">
+              <!-- Rows will be inserted here -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
     <section id="resident-reviews" class="hidden">
@@ -56,52 +60,102 @@ menu_text_color: black
 </div>
 
 <script>
-  const reviews = [
-    {
-      comment: "I love driving on this road!",
-      road: "Rancho Bernardo Road",
-      rating: 5,
-      author: "Jackson"
-    },
-    {
-      comment: "Light takes too long to turn green.",
-      road: "Rancho Bernardo Road",
-      rating: 3,
-      author: "Wyatt"
-    },
-    {
-      comment: "Too many people speeding!",
-      road: "Rancho Bernardo Road",
-      rating: 4,
-      author: "Vincent"
-    },
-    {
-      comment: "My car feels slow on all these roads.",
-      road: "Camino Del Norte",
-      rating: 1,
-      author: "Aranya"
-    },
-    {
-      comment: "I take this road everyday when I go to study AP Chem!",
-      road: "Rancho Bernardo Road",
-      rating: 5,
-      author: "Nolan"
-    },
-    {
-      comment: "My sister drives me on this road to school and there is always traffic!",
-      road: "Camino Del Norte",
-      rating: 2,
-      author: "Brandon"
-    },
-    {
-      comment: "I drive my lambo here!",
-      road: "Rancho Bernardo Road",
-      rating: 5,
-      author: "Trevor"
-    }
-  ];
+  function addRoadEntry(id, name) {
+    const tableBody = document.getElementById('road-table-body');
 
- function renderReviews() {
+    const row = document.createElement('tr');
+    row.className = 'hover:bg-gray-50';
+
+    row.innerHTML = `
+      <td class="px-6 py-4 text-sm text-gray-900">${id}</td>
+      <td class="px-6 py-4 text-sm text-gray-900">${name}</td>
+      <td class="px-6 py-4 text-sm text-right space-x-2">
+        <button class="px-3 py-1 bg-[{{site.colors.primary}}] hover:bg-[{{site.colors.primary-hover}}] text-white rounded-md text-sm shadow">
+          Edit
+        </button>
+        <button class="px-3 py-1 bg-[{{site.colors.accent.red}}] hover:bg-[{{site.colors.accent.red-hover}}] text-white rounded-md text-sm shadow">
+          Delete
+        </button>
+      </td>
+    `;
+
+    tableBody.appendChild(row);
+  }
+
+  let pythonURI;
+  if (location.hostname === "localhost") {
+    pythonURI = "http://localhost:8887";
+  } else if (location.hostname === "127.0.0.1") {
+    pythonURI = "http://127.0.0.1:8887";
+  } else {
+    pythonURI = "https://motor.stu.nighthawkcodingsociety.com";
+  }
+
+  async function getAllRoads() {
+    const fetchOptions = {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "default", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "include", // include, same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        "X-Origin": "client", // New custom header to identify source
+      },
+    };
+
+    const endpoint = pythonURI + "/api/roads"
+
+     try {
+         const response = await fetch(endpoint, fetchOptions);
+         if (!response.ok) {
+             throw new Error('Failed to fetch road data');
+         }
+         return await response.json();
+     } catch (error) {
+         console.error('Error fetching road data:', error);
+         return null;
+     }
+  }
+
+  getAllRoads().then((roads) => {
+    roads.forEach((road) => {
+      addRoadEntry(road.id, road["road_name"])
+    })
+  })
+
+  async function getAllReviews() {
+    const fetchOptions = {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "default", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "include", // include, same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        "X-Origin": "client", // New custom header to identify source
+      },
+    };
+
+    const endpoint = pythonURI + "/api/review"
+
+     try {
+         const response = await fetch(endpoint, fetchOptions);
+         if (!response.ok) {
+             throw new Error('Failed to fetch review data');
+         }
+         return await response.json();
+     } catch (error) {
+         console.error('Error fetching user review data:', error);
+         return null;
+     }
+  }
+
+
+
+  getAllReviews().then((reviews) => {
+    renderReviews(reviews)
+  })
+
+ function renderReviews(reviews) {
      const reviewsList = document.getElementById('reviews-section');
      reviewsList.innerHTML = ''; // Clear existing reviews
 
@@ -112,19 +166,28 @@ menu_text_color: black
          // Road Name
          const roadname = document.createElement('p');
          roadname.classList.add('text-[{{site.colors.secondary}}]', 'font-extrabold', 'text-xl');
-         roadname.textContent = review.road;
+         roadname.textContent = review.road.road_name;
          reviewElement.appendChild(roadname);
+
+         const rating = document.createElement('p');
+          rating.classList.add('text-lg', 'mb-3');
+          let stars = '';
+          for (let i = 1; i <= 5; i++) {
+              stars += i <= review.rating ? '★' : '☆';
+          }
+          rating.textContent = stars;
+          reviewElement.appendChild(rating);
 
          // Review Comment
          const comment = document.createElement('p');
          comment.classList.add('text-gray-800', 'italic', 'text-lg', 'mb-3');
-         comment.textContent = review.comment;
+         comment.textContent = review.description;
          reviewElement.appendChild(comment);
 
          // Author
          const author = document.createElement('p');
          author.classList.add('text-sm', 'text-gray-500', 'text-right');
-         author.textContent = `— ${review.author}`;
+         author.textContent = `— ${review.user.name}`;
          reviewElement.appendChild(author);
 
          reviewsList.appendChild(reviewElement);
@@ -140,7 +203,4 @@ menu_text_color: black
 
   // Show road management by default
   showSection("road-management");
-
-  // Initial render of reviews
-  renderReviews();
 </script>
