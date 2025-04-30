@@ -7,50 +7,22 @@ search_exclude: true
 
 {% include nav/home.html %}
 
-<style>
-.login-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; /* allows the cards to wrap onto the next line if the screen is too small */
-}
+<div class="flex flex-wrap justify-between">
+  <div class="w-full md:w-[45%] mb-5 border border-gray-300 rounded-md p-5 shadow-md overflow-x-auto">
+    <h1 class="mb-5 text-xl font-bold">Login Title</h1>
 
-.login-card {
-    margin-top: 0; /* remove the top margin */
-    width: 45%;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    margin-bottom: 20px;
-    overflow-x: auto; /* Enable horizontal scrolling */
-}
+<table class="w-full mt-5">
+      <!-- Table content here -->
+    </table>
 
-.login-card h1 {
-    margin-bottom: 20px;
-}
+ <button class="w-full mt-5 px-4 py-2 bg-blue-600 hover:bg-blue-800 text-white rounded text-center cursor-pointer">
+      # View Details
+    </button>
+  </div>
 
-.login-card table {
-    width: 100%;
-    margin-top: 20px;
-}
+  <!-- Add more .login-card-style divs here if needed -->
+</div>
 
-.details-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center; /* center the text */
-}
-
-.details-button:hover {
-    background-color: #0056b3;
-}
-</style>
 
 <div class="login-container">
     <!-- Java Login Form -->
