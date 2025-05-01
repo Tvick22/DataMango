@@ -12,8 +12,9 @@ menu: nav/mainHeader.html
       <h2 class="text-xl font-semibold mb-2 text-amber-300">🧭 Brandon – Interactive Map User</h2>
       <ul class="list-disc list-inside text-gray-200">
         <li>Opens the website and sees a 3D</li>
+        <li>Identify streets and street names with hover feature</li>
         <li>Zooms and pans around to explore familiar streets</li>
-        <li>Clicks on intersections to add reviews</li>
+        <li>Clicks on streets to add reviews</li>
       </ul>
     </div>
 
