@@ -15,6 +15,8 @@ menu: nav/mainHeader.html
         <li>Identify streets and street names with hover feature</li>
         <li>Zooms and pans around to explore familiar streets</li>
         <li>Clicks on streets to add reviews</li>
+        <li>User can view color-coded traffic density map feature</li>
+        <li>See past (and future predicted) traffic patterns</li>
       </ul>
     </div>
 
