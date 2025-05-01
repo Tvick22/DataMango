@@ -11,13 +11,9 @@ menu: nav/mainHeader.html
     <div class="bg-slate-700 rounded-2xl shadow-md p-6">
       <h2 class="text-xl font-semibold mb-2 text-amber-300">🧭 Brandon – Interactive Map User</h2>
       <ul class="list-disc list-inside text-gray-200">
-        <li>Opens the website and sees a 3D map of Poway</li>
+        <li>Opens the website and sees a 3D</li>
         <li>Zooms and pans around to explore familiar streets</li>
-        <li>Color-coded roads show real-time traffic flow</li>
-        <li>Clicks on intersections to view congestion details</li>
-        <li>Uses time slider to view earlier traffic patterns</li>
-        <li>Explores “future mode” to predict tomorrow’s commute</li>
-        <li>Uses map to plan fastest route to work</li>
+        <li>Clicks on intersections to add reviews</li>
       </ul>
     </div>
 
